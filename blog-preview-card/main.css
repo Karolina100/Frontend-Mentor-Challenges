@@ -5,7 +5,8 @@
 body {
     background-color: hsl(47, 88%, 63%);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Figtree", sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
@@ -47,7 +48,7 @@ p,
     background-color: hsl(47, 88%, 63%);
     border-radius: 4px;
     font-weight: 800;
-    padding: 4px 12px;
+    padding: 0.25rem 0.75rem;
 }
 
 .title {
@@ -77,29 +78,39 @@ p,
     font-weight: 800;
 }
 
+
+.attribution {
+    margin-top: 0.5rem;
+    font-size: 0.625rem;
+}
+
+.attribution a{
+    color: black;
+}
+
 @media (max-width: 36rem) {
     body {
         font-size: 0.75rem;
     }
-
+    
     .card {
         width: 20.4375rem;
         height: 31.3125rem;
     }
-
+    
     .article-img {
         width: 17.4375rem;
         object-fit: cover;
     }
-
+    
     .card-text {
         height: 10.8125rem;
     }
-
+    
     .title {
         font-size: 1.25rem;
     }
-
+    
     .desc,
     .author p {
         font-size: 0.875rem;

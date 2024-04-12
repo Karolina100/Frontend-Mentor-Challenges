@@ -90,21 +90,44 @@ body {
 }
 
 .cart-icon {
-    height: 15px;
+    height: 1rem;
 }
 
-@media (min-width: 30rem) {
+.attribution {
+    align-self: center;
+    color: hsla(228, 12%, 48%, 80%);
+    font-size: 0.625rem;
+}
+
+.attribution a {
+    color: hsl(158, 36%, 37%);
+    text-decoration: none;
+}
+
+.attribution p {
+    margin-top: 0;
+}
+
+@media (min-width: 480px) {
     body {
         padding: 0;
         display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+
+    .card-container {
+        display: flex;
         justify-content: center;
         align-items: center;
+        flex-grow: 1;
     }
 
     .content {
         display: flex;
         flex-direction: row;
         max-width: 38rem;
+        margin: auto;
     }
 
     .cover-img-desktop {
