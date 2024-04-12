@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(217, 54%, 11%);
+    color: hsl(215, 51%, 70%);
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 150%;
+    margin: 0;
+    padding: 48px 16px;
+    padding-bottom: 6px;
+}
+
+hr {
+    border: 1px solid hsl(215, 32%, 27%);
+}
+
+span {
+    color: white;
+}
+
+footer {
+    font-size: 12px;
+    color: hsl(215, 51%, 70%);
+    margin-top: 24px;
+}
+
+footer a {
+    color: hsl(215, 32%, 45%);
+    text-decoration: none;
+}
+
+.card {
+    /* position: relative; */
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.hoverable:hover {
+    cursor: pointer;
+}
+
+.preview-image-container {
+    display: grid;
+}
+
+.preview-image {
+    width: 100%;
+    border-radius: 12px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.preview-image-div {
+    visibility: hidden;
+    background-color: hsla(178, 100%, 50%, 50%);
+    border-radius: 12px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.preview-image-container:hover .preview-image-div {
+    visibility: visible;
+}
+
+.eye-icon {
+    visibility: hidden;
+    align-self: center;
+    justify-self: center;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.preview-image-container:hover .eye-icon {
+    visibility: visible;
+}
+
+.hovered-image {
+    display: none;
+}
+
+.card-name {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card-name:hover,
+span:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.price-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price-info p {
+    margin: 0;
+}
+
+.price,
+.time-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.price p {
+    color: hsl(178, 100%, 50%);
+    font-weight: 400;
+}
+
+.ethereum-icon,
+.clock-icon {
+    height: 18px;
+    margin-right: 6px;
+}
+
+.creator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.avatar {
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid white;
+    margin-right: 24px;
+}
+
+@media (min-width: 375px) {
+    body {
+        padding: 48px 0px;
+        padding-bottom: 0;
+    }
+
+    .card {
+        width: 343px;
+    }
+}
