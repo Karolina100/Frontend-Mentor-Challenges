@@ -1,0 +1,71 @@
+.summary-body {
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.plan-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+
+.summary-plan-name {
+    margin: 0;
+}
+
+.change-plan-button {
+    color: hsl(231, 11%, 63%);
+    font-weight: 400;
+    text-decoration: underline;
+    margin-top: 0.25rem;
+    width: fit-content;
+}
+
+.change-plan-button:hover {
+    color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+
+hr {
+    border: 0.5px solid hsl(229, 24%, 87%);
+}
+
+.add-on-summary,
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-add-on-name,
+.summary-total {
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 0;
+}
+
+.summary-add-on-price {
+    margin-bottom: 0;
+}
+
+.summary-total p {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.total-price {
+    color: hsl(243, 100%, 62%);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+@media (min-width: 800px) {
+    .summary-body {
+        padding: 2rem;
+    }
+
+    .summary-total {
+        padding: 0 2rem;
+    }
+}

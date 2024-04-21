@@ -1,0 +1,155 @@
+.plan-input {
+    display: none;
+}
+
+.plan-card-content {
+    cursor: pointer;
+    display: flex;
+    padding: 0.25rem 1rem;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 8px;
+}
+
+.plan-card-content:hover {
+    border-color: hsl(243, 100%, 62%);
+}
+
+.plan-input:checked + .plan-card-content {
+    border-color: hsl(243, 100%, 62%);
+    background-color: hsl(231, 100%, 99%);
+}
+
+.card-text {
+    margin-left: 1rem;
+}
+
+.plan-name {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.plan-price {
+    color: hsl(231, 11%, 63%);
+    margin: 0.5rem 0;
+}
+
+.plan-discount {
+    color: (213, 96%, 18%);
+    margin-top: 0.5rem;
+}
+
+.shake {
+    animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.payment-period {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 8px;
+}
+
+.monthly,
+.yearly {
+    margin: 1rem 2.5rem;
+}
+
+.chosen-period {
+    font-weight: 700;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.27em;
+    bottom: 0.25em;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.4em);
+}
+
+@media (min-width: 800px) {
+    .plan-cards {
+        display: flex;
+    }
+
+    .plan-card {
+        margin-right: 1rem;
+    }
+
+    .plan-input {
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+
+    .plan-card-content {
+        flex-direction: column;
+        width: 8.5rem;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .plan-card-content img {
+        width: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-text {
+        margin-left: 0;
+    }
+
+    .plan-price {
+        margin-bottom: 0;
+    }
+
+    .plan-discount {
+        margin-bottom: 0;
+    }
+}

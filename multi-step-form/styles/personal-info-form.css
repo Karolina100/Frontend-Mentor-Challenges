@@ -1,0 +1,42 @@
+input::placeholder {
+    color: hsl(231, 11%, 63%);
+    font-weight: 400;
+}
+
+input:focus {
+    outline: none;
+    border-color: hsl(243, 100%, 62%);
+}
+
+.incorrect-input {
+    border-color: red;
+}
+
+.input-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    font-size: 0.75rem;
+}
+
+.incorrect-input-text {
+    margin: 0;
+    color: red;
+    font-weight: 700;
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+@media (min-width: 800px) {
+    .info-field {
+        height: 3rem;
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+}

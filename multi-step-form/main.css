@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0 0.5rem 5rem 0.5rem;
+    background: no-repeat url(assets/images/bg-sidebar-mobile.svg);
+    background-size: 100%;
+    background-color: hsl(217, 100%, 97%);
+    font-family: "Ubuntu", sans-serif;
+    color: hsl(213, 96%, 18%);
+    font-weight: 400;
+}
+
+.component {
+    display: flex;
+    flex-direction: column;
+    max-width: 58rem;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.step-container {
+    padding: 2.5rem 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+}
+
+.step-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.step-header p {
+    color: hsl(231, 11%, 63%);
+    line-height: 150%;
+}
+
+label {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    display: block;
+}
+
+input {
+    margin-top: 2px;
+    padding-left: 0.75rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 1px solid hsl(229, 24%, 87%);
+    width: 100%;
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.attribution {
+    font-size: 0.625rem;
+    color: hsl(213, 96%, 18%);
+    text-align: center;
+    margin-top: 0.5rem;
+    width: fit-content;
+    align-self: center;
+}
+
+.attribution a {
+    text-decoration: none;
+    color: hsl(243, 100%, 62%);
+}
+
+@media (min-width: 800px) {
+    body {
+        background-image: none;
+        padding: 0 0.5rem
+    }
+
+    .card {
+        border-radius: 12px;
+        max-width: 58rem;
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        background-color: white;
+    }
+
+    .step-header h1 {
+        font-size: 2rem;
+    }
+
+    .step-container {
+        display: flex;
+        flex-direction: column;
+        /* width: fit-content; */
+        max-width: 28.5rem;
+        padding: 2.5rem 0 1rem 0.5rem;
+    }
+
+    .step-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 1rem;
+        width: 28rem;
+    }
+}

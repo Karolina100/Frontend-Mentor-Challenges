@@ -1,0 +1,55 @@
+.bottom-bar {
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-button {
+    color: hsl(231, 11%, 63%);
+    cursor: pointer;
+    margin: 0;
+}
+
+.back-button:hover {
+    color: hsl(213, 96%, 18%);
+}
+
+.next-button,
+.confirm-button {
+    cursor: pointer;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    height: 2.25rem;
+    padding: 0 1.25rem;
+    border-radius: 6px;
+    border: 0;
+}
+
+.next-button:hover {
+    background-color: hsla(213, 96%, 18%, 80%);
+}
+
+.confirm-button {
+    background-color: hsl(243, 100%, 62%);
+}
+
+.confirm-button:hover {
+    background-color: hsla(243, 100%, 62%, 80%);
+}
+
+@media (min-width: 800px) {
+    .bottom-bar {
+        padding: unset;
+        position: unset;
+        background-color: unset;
+        width: unset;
+        display: flex;
+    }
+}

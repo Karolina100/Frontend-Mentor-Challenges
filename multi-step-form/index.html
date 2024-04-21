@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="styles/sidebar.css" />
+        <link rel="stylesheet" href="styles/header.css" />
+        <link rel="stylesheet" href="styles/bottom-bar.css" />
+        <link rel="stylesheet" href="styles/personal-info-form.css" />
+        <link rel="stylesheet" href="styles/plans-form.css" />
+        <link rel="stylesheet" href="styles/add-ons-form.css" />
+        <link rel="stylesheet" href="styles/summary.css" />
+        <link rel="stylesheet" href="styles/thank-you.css" />
+        <script type="module" src="index.js"></script>
+        <title>Multi-step form | Frontend Mentor</title>
+    </head>
+
+    <body>
+        <div class="component">
+            <div class="card">
+                <aside class="sidebar"></aside>
+
+                <main class="main-content">
+                    <div class="step-container">
+                        <div class="step-header"></div>
+                        <div class="step-body"></div>
+                        <div class="bottom-bar"></div>
+                    </div>
+                </main>
+            </div>
+
+            <div class="attribution">
+                <p>Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by <a href="#" target="_blank">Karolína Stöhrová</a>.</p>
+            </div>
+        </div>
+
+        <template id="sidebar-step-template">
+            <div class="step">
+                <div class="step-num">
+                    <p>1</p>
+                </div>
+                <div class="step-info">
+                    <p>Step 1</p>
+                    <h2>Your info</h2>
+                </div>
+            </div>
+        </template>
+
+        <template id="header-template">
+            <div class="form-header">
+                <h1>Personal info</h1>
+                <p>
+                    Please provide your name, email address, and phone number.
+                </p>
+            </div>
+        </template>
+
+        <template id="next-button-template">
+            <button class="next-button">Next Step</button>
+        </template>
+
+        <template id="back-button-template">
+            <p class="back-button">Go back</p>
+        </template>
+
+        <template id="confirm-button-template">
+            <button class="confirm-button">Confirm</button>
+        </template>
+
+        <template id="personal-info-form-template">
+            <form method="get" id="personal-info-form">
+                <div class="input-info">
+                    <label for="name">Name</label>
+                    <p class="incorrect-input-text">
+                        Please enter a full name.
+                    </p>
+                </div>
+                <input
+                    name="name"
+                    id="name"
+                    placeholder="e.g. Stephen King"
+                    class="info-field"
+                />
+                <div class="input-info">
+                    <label for="email">Email</label>
+                    <p class="incorrect-input-text">
+                        Please enter a correct email address.
+                    </p>
+                </div>
+                <input
+                    name="email"
+                    id="email"
+                    placeholder="e.g. stephenking@lorem.com"
+                    class="info-field"
+                />
+                <div class="input-info">
+                    <label for="phone">Phone number</label>
+                    <p class="incorrect-input-text">
+                        Please enter a correct phone number.
+                    </p>
+                </div>
+                <input
+                    name="phone"
+                    id="phone"
+                    placeholder="e.g. +1 234 567 890"
+                    class="info-field"
+                />
+            </form>
+        </template>
+
+        <template id="plan-form-template">
+            <form method="get" id="plan-form">
+                <div class="plan-cards"></div>
+                <div class="payment-period">
+                    <p class="monthly chosen-period">Monthly</p>
+                    <label class="switch">
+                        <input type="checkbox" />
+                        <span class="slider round"></span>
+                    </label>
+                    <p class="yearly">Yearly</p>
+                </div>
+            </form>
+        </template>
+
+        <template id="plan-card-template">
+            <label class="plan-card">
+                <input class="plan-input" type="radio" name="plan-card" />
+                <div class="plan-card-content">
+                    <img
+                        src="assets/images/icon-arcade.svg"
+                        alt="arcade plan icon"
+                    />
+                    <div class="card-text">
+                        <p class="plan-name">Arcade</p>
+                        <p class="plan-price">$9/mo</p>
+                    </div>
+                </div>
+            </label>
+        </template>
+
+        <template id="add-ons-form-template">
+            <form method="get" id="add-ons-form"></form>
+        </template>
+
+        <template id="add-on-card-template">
+            <label class="add-on">
+                <div class="add-on-main">
+                    <input type="checkbox" class="add-on-checkbox" />
+                    <div class="add-on-content">
+                        <p class="add-on-name">Online service</p>
+                        <p class="add-on-description">
+                            Access to multiplayer games
+                        </p>
+                    </div>
+                </div>
+                <p class="add-on-price">+$1/mo</p>
+            </label>
+        </template>
+
+        <template id="summary-template">
+            <div>
+                <div class="summary-body">
+                    <div class="plan-summary">
+                        <div class="plan-summary-text">
+                            <p class="summary-plan-name">Arcade (Monthly)</p>
+                            <p class="change-plan-button">Change</p>
+                        </div>
+                        <p class="summary-plan-price">$9/mo</p>
+                    </div>
+                    <hr />
+                    <div class="add-ons-summary"></div>
+                </div>
+                <div class="summary-total">
+                    <p class="total-text">Total (per month)</p>
+                    <p class="total-price">+$12/mo</p>
+                </div>
+            </div>
+        </template>
+
+        <template id="add-on-summary-template">
+            <div class="add-on-summary">
+                <p class="summary-add-on-name">Online service</p>
+                <p class="summary-add-on-price">+$1/mo</p>
+            </div>
+        </template>
+
+        <template id="thank-you-template">
+            <div class="thank-you-container">
+                <img
+                    src="assets/images/icon-thank-you.svg"
+                    alt="checkmark icon"
+                />
+                <div class="form-header thank-you-text">
+                    <h1>Thank you!</h1>
+                    <p>
+                        Thanks for confirming your subscription! We hope you
+                        have fun using our platform. If you ever need support,
+                        please feel free to email us at support@loremgaming.com.
+                    </p>
+                </div>
+            </div>
+        </template>
+    </body>
+</html>
