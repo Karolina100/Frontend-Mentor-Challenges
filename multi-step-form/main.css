@@ -76,7 +76,7 @@ input {
 @media (min-width: 800px) {
     body {
         background-image: none;
-        padding: 0 0.5rem
+        padding: 0 0.5rem;
     }
 
     .card {

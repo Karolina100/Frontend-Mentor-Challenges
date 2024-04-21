@@ -34,7 +34,7 @@ export default class PlanStep extends FormStep {
             const paymentPeriod = this.getPaymentPeriod(switchElement);
             this.renderPlanCards(planCardsContainerElement, paymentPeriod);
 
-            this.switchPeriodsStyle(planFormElement)
+            this.switchPeriodsStyle(planFormElement);
 
             this.addOnChangeCallbacks(planFormElement, data);
         });
@@ -42,7 +42,7 @@ export default class PlanStep extends FormStep {
         container.appendChild(planFormElement);
 
         this.addOnChangeCallbacks(planFormElement, data);
-        this.prefillPlanForm(planFormElement, data)
+        this.prefillPlanForm(planFormElement, data);
     }
 
     switchPeriodsStyle(planFormElement) {
@@ -98,8 +98,9 @@ export default class PlanStep extends FormStep {
     }
 
     addOnChangeCallbacks(planFormElement, data) {
-        const planInputElements = planFormElement.querySelectorAll(".plan-input");
-        const switchElement = planFormElement.querySelector(".switch input")
+        const planInputElements =
+            planFormElement.querySelectorAll(".plan-input");
+        const switchElement = planFormElement.querySelector(".switch input");
 
         for (let i = 0; i < planInputElements.length; i++) {
             planInputElements[i].addEventListener("change", () => {
@@ -120,17 +121,20 @@ export default class PlanStep extends FormStep {
     }
 
     prefillPlanForm(planFormElement, data) {
-        const switchElement = planFormElement.querySelector(".switch input")
+        const switchElement = planFormElement.querySelector(".switch input");
         if (data.selectedPlan.paymentPeriod === "year") {
-            switchElement.checked = true
-            this.switchPeriodsStyle(planFormElement)
+            switchElement.checked = true;
+            this.switchPeriodsStyle(planFormElement);
         }
 
-        const planNameElements = planFormElement.querySelectorAll(".plan-name")
-        const planInputElements = planFormElement.querySelectorAll(".plan-input")
+        const planNameElements = planFormElement.querySelectorAll(".plan-name");
+        const planInputElements =
+            planFormElement.querySelectorAll(".plan-input");
         for (let i = 0; i < planInputElements.length; i++) {
-            if (planNameElements[i].textContent === data.selectedPlan.planName) {
-                planInputElements[i].checked = true
+            if (
+                planNameElements[i].textContent === data.selectedPlan.planName
+            ) {
+                planInputElements[i].checked = true;
             }
         }
     }

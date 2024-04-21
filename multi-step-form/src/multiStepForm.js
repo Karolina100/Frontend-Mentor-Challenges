@@ -9,7 +9,7 @@ export default class MultistepForm {
     constructor(steps, finalStep, defaultFormData) {
         this.#steps = steps;
         this.#finalStep = finalStep;
-        this.formData = {...defaultFormData};
+        this.formData = { ...defaultFormData };
         this.renderSidebar();
         this.onStepUpdate();
     }
@@ -70,7 +70,10 @@ export default class MultistepForm {
     renderStepBody() {
         const stepBodyElement = document.querySelector(".step-body");
         stepBodyElement.innerHTML = "";
-        this.#steps[this.#stepIndex].renderStepBody(stepBodyElement, this.formData);
+        this.#steps[this.#stepIndex].renderStepBody(
+            stepBodyElement,
+            this.formData
+        );
     }
 
     renderButtons() {
@@ -96,7 +99,7 @@ export default class MultistepForm {
             );
             nextButtonElement.addEventListener("click", () => {
                 if (!this.#steps[this.#stepIndex].validateStep()) {
-                    return
+                    return;
                 }
                 this.#stepIndex++;
                 this.onStepUpdate();

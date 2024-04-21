@@ -2,7 +2,6 @@ import FormStep from "./formStep";
 import { createElementFromTemplate, renderHeader } from "./utils";
 
 export default class SummaryStep extends FormStep {
-
     getStepName() {
         return "Summary";
     }

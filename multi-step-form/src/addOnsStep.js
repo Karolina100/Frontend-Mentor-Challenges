@@ -54,15 +54,15 @@ export default class AddOnsStep extends FormStep {
             "add-ons-form-template"
         );
 
-        const paymentPeriod = data.selectedPlan.paymentPeriod
+        const paymentPeriod = data.selectedPlan.paymentPeriod;
 
-        data.selectedAddOns = data.selectedAddOns.filter(addOn => addOn.paymentPeriod === paymentPeriod)
+        data.selectedAddOns = data.selectedAddOns.filter(
+            (addOn) => addOn.paymentPeriod === paymentPeriod
+        );
 
         for (let card of this.#addOnCards) {
             const price =
-                paymentPeriod === "year"
-                    ? card.yearlyPrice
-                    : card.monthlyPrice;
+                paymentPeriod === "year" ? card.yearlyPrice : card.monthlyPrice;
             this.renderAddOnCard(
                 addOnsFormElement,
                 card.name,
@@ -74,44 +74,51 @@ export default class AddOnsStep extends FormStep {
 
         container.appendChild(addOnsFormElement);
 
-        this.addOnChangeCallbacks(data)
-        this.prefillForm(data)
+        this.addOnChangeCallbacks(data);
+        this.prefillForm(data);
     }
 
     addOnChangeCallbacks(data) {
         const addOnInputElements =
             document.querySelectorAll(".add-on-checkbox");
         const paymentPeriod = data.selectedPlan.paymentPeriod;
-        const priceProperty = paymentPeriod === "month" ? "monthlyPrice" : "yearlyPrice"
+        const priceProperty =
+            paymentPeriod === "month" ? "monthlyPrice" : "yearlyPrice";
 
         for (let i = 0; i < addOnInputElements.length; i++) {
-            const addOnName = this.#addOnCards[i].name
-            const addOnPrice = this.#addOnCards[i][priceProperty]
+            const addOnName = this.#addOnCards[i].name;
+            const addOnPrice = this.#addOnCards[i][priceProperty];
 
             addOnInputElements[i].addEventListener("change", () => {
                 if (addOnInputElements[i].checked) {
                     data.selectedAddOns.push({
                         addOnName,
                         addOnPrice,
-                        paymentPeriod
-                    })
+                        paymentPeriod,
+                    });
                 } else {
-                    data.selectedAddOns = data.selectedAddOns.filter(addOn => addOn.addOnName !== addOnName || addOn.addOnPrice !== addOnPrice)
+                    data.selectedAddOns = data.selectedAddOns.filter(
+                        (addOn) =>
+                            addOn.addOnName !== addOnName ||
+                            addOn.addOnPrice !== addOnPrice
+                    );
                 }
-            })
+            });
         }
     }
 
     prefillForm(data) {
         const addOnInputElements =
             document.querySelectorAll(".add-on-checkbox");
-        const addOnNameElements = document.querySelectorAll(".add-on-name")
-        const addOnNames = Array.from(addOnNameElements).map(element => element.textContent)
+        const addOnNameElements = document.querySelectorAll(".add-on-name");
+        const addOnNames = Array.from(addOnNameElements).map(
+            (element) => element.textContent
+        );
 
         for (let addOn of data.selectedAddOns) {
-            const elementIndex = addOnNames.indexOf(addOn.addOnName)
+            const elementIndex = addOnNames.indexOf(addOn.addOnName);
             if (elementIndex !== -1) {
-                addOnInputElements[elementIndex].checked = true
+                addOnInputElements[elementIndex].checked = true;
             }
         }
     }
